@@ -1,0 +1,17 @@
+---
+title: Configuring Authorized Domains
+description: How to configure authorized domains in Firebase to secure your application.
+---
+
+## Configuring Authorized Domains
+
+To ensure that your Firebase project is only accessible from trusted domains, you must add them to the authorized domains list.
+
+1.  In the Firebase Console, navigate to the **Authentication** section from the left-hand menu.
+2.  Select the **Settings** tab.
+3.  Under the **Authorized domains** section, click **Add domain**.
+4.  Add all the domains from which your application will be accessed (e.g., `localhost` for development, `your-app.com` for production).
+
+<Callout>
+  While your Firebase API key (`NEXT_PUBLIC_FIREBASE_API_KEY`) is considered public, Firebase uses the authorized domains list to block requests from any domain not on the list. This is a critical security step to prevent unauthorized use of your Firebase project.
+</Callout>

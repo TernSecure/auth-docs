@@ -1,0 +1,33 @@
+---
+title: Sign in with Google
+description: How to configure Google Sign-In with Firebase and set up the necessary redirect URIs.
+---
+
+## Google Sign-In Configuration
+
+When using Google as an authentication provider, you must configure the authorized redirect URIs in your Google Cloud project. This ensures that Google trusts your domain and securely returns the authentication response to your application.
+
+This step is crucial when using `signInWithRedirect`, as it tells Google where to send the user back to after they have successfully authenticated.
+
+### Configuring the Redirect URI
+
+1.  Navigate to the [Google Cloud Console](https://console.cloud.google.com/).
+2.  From the project dropdown, select the project associated with your Firebase application.
+3.  In the left-hand menu, go to **APIs & Services** > **Credentials**.
+4.  Under the **OAuth 2.0 Client IDs** section, select the client ID you are using for your web application.
+5.  Under **Authorized redirect URIs**, click **Add URI**.
+6.  Add the following URI, replacing `your_domain` with your actual domain:
+
+    ```
+    https://your_domain/__/auth/handler
+    ```
+
+    For local development, you will also need to add a URI for `localhost`. The exact port will depend on your Firebase configuration.
+
+    ```
+    http://localhost:3000/__/auth/handler
+    ```
+
+<Callout>
+  The `__/auth/handler` path is a special endpoint used by the Firebase SDK to finalize the authentication process. Failing to add this URI will result in an error during the sign-in flow. For more detailed information, refer to the official [Google Cloud Identity Platform documentation](https://docs.cloud.google.com/identity-platform/docs/web/redirect-best-practices).
+</Callout>
