@@ -27,15 +27,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     {
       title: "Getting Started",
       icon: <BookOpen className="size-4" />,
-      url: "/docs/${sdk}/getting-started",
+      url: "/docs/getting-started/installation",
       items: [
         {
           title: "Installation",
-          url: "/docs/${sdk}/installation",
-        },
-        {
-          title: "Quick Start",
-          url: "/docs/${sdk}/quick-start",
+          url: "/docs/getting-started/installation",
         },
         {
           title: "Configuration",
