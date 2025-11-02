@@ -60,6 +60,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             { title: "Custom Sign-Up", url: "/docs/guides/authentication-flows/custom-sign-up" },
           ],
         },
+        {title: "Auth State Persistence", url: "/docs/guides/authstate-persistence"},
       ],
     },
     {
@@ -91,25 +92,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       icon: <Shield className="size-4" />,
       collapsible: true,
       items: [
-        {
-          title: "Auth Methods",
-          url: "/docs/api/auth",
-          collapsible: true,
-          items: [
-            { title: "signIn()", url: "/docs/api/auth/signin" },
-            { title: "signOut()", url: "/docs/api/auth/signout" },
-            { title: "signUp()", url: "/docs/api/auth/signup" },
-          ],
-        },
-        {
-          title: "User Methods",
-          url: "/docs/api/users",
-          collapsible: true,
-          items: [
-            { title: "getUser()", url: "/docs/api/users/get" },
-            { title: "updateUser()", url: "/docs/api/users/update" },
-          ],
-        },
+        { title: "ternSecureProxy()", url: "/docs/reference/proxy" },
+        { title: "ternSecureInstrumentation()", url: "/docs/reference/instrumentation" },
       ],
     },
   ];
