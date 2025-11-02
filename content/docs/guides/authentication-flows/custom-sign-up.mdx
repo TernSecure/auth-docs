@@ -1,0 +1,19 @@
+---
+title: Custom Sign-Up
+description: This guide explains how to implement a custom sign-up flow.
+---
+
+### Build your own Sign-Up component
+
+```tsx title="app/sign-up/[[...sign-up]]/page.tsx"
+import { SignUpForm } from "@/components/signup-form";
+import { SignUpProvider } from "@tern-secure/nextjs";
+
+export default function Page() {
+  return (
+    <SignUpProvider>
+      <SignUpForm />
+    </SignUpProvider>
+  );
+}
+```

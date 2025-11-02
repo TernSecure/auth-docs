@@ -1,13 +1,26 @@
 ---
-title: Configuring Authorized Domains
+title: Authorized Domains & Redirect URIs
 description: To ensure that your Firebase project is only accessible from trusted domains, you must add them to the authorized domains list.
 ---
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+
+## Adding Authorized Domains
 
 1.  In the Firebase Console, navigate to the **Authentication** section from the left-hand menu.
 2.  Select the **Settings** tab.
 3.  Under the **Authorized domains** section, click **Add domain**.
 4.  Add all the domains from which your application will be accessed (e.g., `localhost` for development, `your-app.com` for production).
 
-<Callout>
-  While your Firebase API key (`NEXT_PUBLIC_FIREBASE_API_KEY`) is considered public, Firebase uses the authorized domains list to block requests from any domain not on the list. This is a critical security step to prevent unauthorized use of your Firebase project.
-</Callout>
+
+## Authorized Redirect URIs
+
+Adding authDomain to your OAuth provider's list depend on the provider.
+<Accordions type="single">
+<Accordion title="SignIn With Google">
+<include>../_partial/google-authorized-uri.mdx</include>
+</Accordion>
+<Accordion title="Facebook Login">
+</Accordion>
+<Accordion title="Microsoft">
+</Accordion>
+</Accordions>

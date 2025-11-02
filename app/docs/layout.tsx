@@ -5,7 +5,7 @@ import { BookOpen, FileText, Settings, Shield } from "lucide-react";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const base = baseOptions();
-  
+
   const tabs = [
     {
       title: "Next.js",
@@ -24,7 +24,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   ];
 
   const navigation = [
-    // ========== NAVIGATION 1: GETTING STARTED ==========
     {
       title: "Getting Started",
       icon: <BookOpen className="size-4" />,
@@ -44,38 +43,25 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         },
       ],
     },
-
-    // ========== NAVIGATION 2: GUIDES ==========
     {
       title: "Guides",
       icon: <FileText className="size-4" />,
       url: "/docs/guides/overview",
       items: [
         {
-          title: "Authentication",
-          url: "/docs/guides/authentication",
-          items: [
-            { title: "Email/Password", url: "/docs/guides/auth/email" },
-            { title: "OAuth", url: "/docs/guides/auth/oauth" },
-          ],
+          title: "Overview",
+          url: "/docs/guides/overview",
         },
         {
-          title: "User Management",
-          url: "/docs/guides/users",
+          title: "Authentication Flows",
           collapsible: true,
           items: [
-            { title: "Create User", url: "/docs/guides/users/create" },
-            { title: "Update User", url: "/docs/guides/users/update" },
+            { title: "Custom Sign-In", url: "/docs/guides/authentication-flows/custom-sign-in" },
+            { title: "Custom Sign-Up", url: "/docs/guides/authentication-flows/custom-sign-up" },
           ],
-        },
-        {
-          title: "Best Practices",
-          url: "/docs/guides/best-practices",
         },
       ],
     },
-
-    // ========== NAVIGATION 3: FIREBASE SETUP ==========
     {
       title: "Firebase",
       icon: <Settings className="size-4" />,
@@ -91,7 +77,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           url: "/docs/firebase/initialize",
         },
         {
-          title: "Authorized Domains",
+          title: "Authorized Domains & Redirect URIs",
           url: "/docs/firebase/authorized-domains",
         },
         {
@@ -100,8 +86,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         },
       ],
     },
-
-    // ========== NAVIGATION 4: API REFERENCE ==========
     {
       title: "API Reference",
       icon: <Shield className="size-4" />,

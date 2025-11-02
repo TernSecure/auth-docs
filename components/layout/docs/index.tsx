@@ -97,6 +97,8 @@ interface SidebarOptions
   collapsible?: boolean;
 }
 
+
+
 export function DocsLayout(props: DocsLayoutProps) {
   const {
     tabMode = "sidebar",
