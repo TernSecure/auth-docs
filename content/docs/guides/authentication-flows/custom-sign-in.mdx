@@ -2,7 +2,7 @@
 title: Custom Sign-In for your Next.js app with TernSecure
 ---
 
-import { Step, Steps } from "fumadocs-ui/components/steps"
+import { Step, Steps } from "fumadocs-ui/components/steps";
 
 <Steps>
 <Step>
@@ -47,7 +47,7 @@ const signInPasswordField = async () => {
     });
   }
   if (res?.status === "success") {
-   // do something after successful sign-in
+    // do something after successful sign-in
   }
 };
 ```
@@ -60,7 +60,11 @@ const handleEmailSignIn = async (e: React.FormEvent) => {
   return signInPasswordField();
 };
 
-return <form onSubmit={handleEmailSignIn}>{/* your form fields */}</form>;
+return (
+  <div>
+    <form onSubmit={handleEmailSignIn}>{/* your form fields */}</form>
+  </div>
+);
 ```
 
 </Step>

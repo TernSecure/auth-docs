@@ -1,7 +1,8 @@
 ---
 title: Custom Sign-Up for your Next.js app with TernSecure
 ---
-import { Step, Steps } from "fumadocs-ui/components/steps"
+
+import { Step, Steps } from "fumadocs-ui/components/steps";
 
 <Steps>
 <Step>
@@ -19,6 +20,7 @@ export default function Page() {
   );
 }
 ```
+
 </Step>
 <Step>
 ### Add Sign-Up methods in your component
@@ -44,7 +46,7 @@ const signUpPasswordField = async () => {
     });
   }
   if (res?.status === "success") {
-   // do something after successful sign-in
+    // do something after successful sign-in
   }
 };
 ```
@@ -58,11 +60,12 @@ const handleEmailSignUp = async (e: React.FormEvent) => {
 };
 
 return (
-  <form onSubmit={handleEmailSignUp}>
-    {/* your form fields */}
-  </form>
+  <div>
+    <form onSubmit={handleEmailSignUp}>{/* your form fields */}</form>
+  </div>
 );
 ```
+
 </Step>
 <Step>
 ### Make sign-up public route
@@ -70,15 +73,13 @@ return (
   if you are using Next.js 15 middleware.ts should be renamed to proxy.ts
 </Callout>
 
-``` ts title="proxy.ts"
+```ts title="proxy.ts"
 import {
   ternSecureProxy,
   createRouteMatcher,
 } from "@tern-secure/nextjs/server";
 
-const publicPaths = createRouteMatcher([
-  "/sign-up(*)",
-]);
+const publicPaths = createRouteMatcher(["/sign-up(*)"]);
 
 export const config = {
   matcher: [
@@ -89,6 +90,7 @@ export const config = {
 
 export default ternSecureProxy();
 ```
+
 </Step>
 <Step>
 ### Update environment variables
@@ -98,5 +100,6 @@ Set the following environment variables to tell TernSecure where your sign-up pa
 ```bash title=".env"
 NEXT_PUBLIC_SIGN_UP_URL='/sign-up'
 ```
+
 </Step>
 </Steps>
