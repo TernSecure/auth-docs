@@ -76,7 +76,26 @@ return (
 
 This is an example of proxy without protecting route.
 
-<include>../../_partial/proxy-signin-route.mdx</include>
+``` ts title="proxy.ts"
+import {
+  ternSecureProxy,
+  createRouteMatcher,
+} from "@tern-secure/nextjs/server";
+
+const publicPaths = createRouteMatcher([
+  "/api/auth/(.*)",
+  "/sign-in(*)", // [!code highlight]
+]);
+
+export const config = {
+  matcher: [
+    "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",
+    "/(api|trpc)(.*)",
+  ],
+};
+
+export default ternSecureProxy();
+```
 </Step>
 <Step>
 ### Update environment variables

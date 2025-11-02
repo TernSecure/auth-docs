@@ -26,9 +26,9 @@ export default function RootLayout({ children }) {
 
 ### sessionCookie Persistence
 
-TernSecure provides an additional option called `browserCookie` which uses cookies to persist the authentication state. This is particularly useful for server-side rendering (SSR) scenarios in Next.js, as cookies can be accessed on both the client and server sides.
+TernSecure provides an additional option called `browserCookie` which uses cookies to persist the authentication state. This is particularly useful for server-side rendering (SSR) scenarios in Next.js
 
-browserSession persistence uses firebaseServerApp to render SSR. make sure to create
+browserCookie persistence uses firebaseServerApp to render SSR. make sure to create
 `instrumentation.ts` in your root directory. <Link href="/docs/reference/instrumentation">ternSecureInstrumentation()</Link>
 
 ```tsx title="app/layout.tsx"

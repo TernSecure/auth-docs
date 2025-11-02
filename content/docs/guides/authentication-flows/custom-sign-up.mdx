@@ -79,7 +79,11 @@ import {
   createRouteMatcher,
 } from "@tern-secure/nextjs/server";
 
-const publicPaths = createRouteMatcher(["/sign-up(*)"]);
+const publicPaths = createRouteMatcher([
+  "/api/auth/(.*)",
+  "/sign-in(*)",
+  "/sign-up(*)" // [!code highlight]
+]);
 
 export const config = {
   matcher: [

@@ -4,7 +4,7 @@ title: ternSecureInstrumentation()
 create instrumentation.ts in your root directory.
 
 <Callout type="info" title="Note">
-  `ternSecureInstrumentation()` intercept firebase requests to add referer in the header. so firebaseServerApp wont thro auth/refer-empty error when render in SSR.
+  `ternSecureInstrumentation()` intercept firebase requests to add referer in the header. so firebaseServerApp wont throw auth/refer-empty error.
 </Callout>
 
 ``` ts title="instrumentation.ts"

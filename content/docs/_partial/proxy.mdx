@@ -10,7 +10,9 @@ import {
 } from "@tern-secure/nextjs/server";
 
 const publicPaths = createRouteMatcher([
+  "/api/auth/(.*)",
   "/sign-in(*)",
+  //add other public routes if needed
 ]);
 
 export const config = {
