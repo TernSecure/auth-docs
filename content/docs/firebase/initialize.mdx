@@ -1,0 +1,31 @@
+---
+title: Firebase Config and Initialization
+description: How to set up a Firebase project and get the necessary credentials for TernSecure.
+---
+
+## Obtain your Firebase config object
+
+Get your Firebase project's Client SDK and Admin SDK credentials from the Firebase Console (Project settings → Your apps and Service accounts). Copy the Client SDK config (apiKey, authDomain, projectId, etc.) and the Admin service account JSON, then set the values in environment variables as shown below.
+
+<Callout>
+	We recommend storing your app's Firebase project configuration in environment variables. TernSecure instances will read these env vars and handle Firebase initialization for you.
+</Callout>
+
+
+
+```bash title=".env.local"
+# Firebase Client SDK Configuration
+NEXT_PUBLIC_FIREBASE_API_KEY=your-api-key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-auth-domain
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-project-id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-storage-bucket
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your-messaging-sender-id
+NEXT_PUBLIC_FIREBASE_APP_ID=your-app-id
+
+# Firebase Admin SDK Configuration (for server-side operations)
+FIREBASE_PROJECT_ID=your-project-id
+FIREBASE_CLIENT_EMAIL=your-firebase-service-account-client-email
+FIREBASE_PRIVATE_KEY=your-firebase-service-account-private-key
+```
+
+After setting up your credentials, it is critical to [configure your authorized domains](./authorized-domains).

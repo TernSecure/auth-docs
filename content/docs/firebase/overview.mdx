@@ -1,17 +1,42 @@
 ---
-title: Overview
-description: Firebase Overview.
+title: Firebase Guides
+description: "How to configure Firebase so TernSecure Authentication works correctly. Because TernSecure is built on top of Firebase Authentication, misconfigured Firebase settings will prevent authentication from working. Complete the console steps: provide correct SDK configuration so Firebase can initialize, enable the required sign-in providers, add authorized domains, and set the required redirect URIs for redirect flows."
 ---
 
-## Firebase Overview
+import { Card, Cards } from 'fumadocs-ui/components/card'
+import { Settings, Globe, KeyRound, LogIn, ExternalLink } from 'lucide-react'
 
-To ensure that your Firebase project is only accessible from trusted domains, you must add them to the authorized domains list.
+## What you'll need
 
-1.  In the Firebase Console, navigate to the **Authentication** section from the left-hand menu.
-2.  Select the **Settings** tab.
-3.  Under the **Authorized domains** section, click **Add domain**.
-4.  Add all the domains from which your application will be accessed (e.g., `localhost` for development, `your-app.com` for production).
+- A Firebase project with a registered Web app
+- App's Firebase project configuration
+- At least one provider enabled (for testing, Email/Password or Google)
 
-<Callout>
-  While your Firebase API key (`NEXT_PUBLIC_FIREBASE_API_KEY`) is considered public, Firebase uses the authorized domains list to block requests from any domain not on the list. This is a critical security step to prevent unauthorized use of your Firebase project.
-</Callout>
+
+<Cards>
+  <Card
+    icon={<Settings />}
+    title="Initialize Authentication SDK"
+    description="Create a Firebase project and web app, collect SDK credentials, add env vars, and initialize the SDK."
+    href="/docs/firebase/initialize"
+  />
+  <Card
+    icon={<Globe />}
+    title="Authorized Domains"
+    description="Allow only trusted origins (localhost, staging, production) to use your Firebase project."
+    href="/docs/firebase/authorized-domains"
+  />
+  <Card
+    icon={<KeyRound />}
+    title="Enable Sign-in Methods"
+    description="Turn on the providers you need (Email/Password, Google, etc.) in the Firebase Console."
+    href="/docs/firebase/firebase-sign-in-methods"
+  />
+  <Card
+    icon={<LogIn />}
+    title="Redirect best practices"
+    description="Set the required redirect URI (__/auth/handler) so redirect flows complete successfully."
+    href="/docs/firebase/firebase-signin-with-google"
+  />
+</Cards>
+

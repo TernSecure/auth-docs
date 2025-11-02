@@ -83,20 +83,20 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       collapsible: false,
       items: [
         {
-          title: "Configuration",
-          url: "/docs/firebase/configuration",
+          title: "Overview",
+          url: "/docs/firebase/overview",
+        },
+        {
+          title: "Initialize Authentication SDK",
+          url: "/docs/firebase/initialize",
         },
         {
           title: "Authorized Domains",
           url: "/docs/firebase/authorized-domains",
         },
         {
-          title: "Sign-in Methods",
-          url: "/docs/firebase/sign-in-methods",
-        },
-        {
-          title: "Google Sign-in",
-          url: "/docs/firebase/google-signin",
+          title: "Best Practices for signInWithRedirect",
+          url: "/docs/firebase/redirect-best-practices",
         },
       ],
     },
