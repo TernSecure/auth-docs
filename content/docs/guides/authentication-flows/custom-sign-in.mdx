@@ -2,11 +2,11 @@
 title: Custom Sign-In for your Next.js app with TernSecure
 ---
 
-import { Step, Steps } from "fumadocs-ui/components/steps";
+import { Step, Steps } from "fumadocs-ui/components/steps"
 
 <Steps>
 <Step>
-### Wrapp your own sign-in component with SignInProvider
+### Wrap your own sign-in component with SignInProvider
 
 ```tsx title="app/sign-in/[[...sign-in]]/page.tsx"
 import { SignInFormField } from "@/components/signin-form-field";
@@ -33,7 +33,7 @@ export default function Page() {
 we will use `useSignIn` hook from TernSecure to handle sign-in methods.
 
 ```tsx title="components/signin-form-field.tsx"
-import { useSignIn, useTernSecure } from "@tern-secure/nextjs";
+import { useSignIn } from "@tern-secure/nextjs";
 
 const { signIn } = useSignIn();
 

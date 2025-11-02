@@ -1,9 +1,11 @@
 ---
-title: Custom Sign-Up
-description: This guide explains how to implement a custom sign-up flow.
+title: Custom Sign-Up for your Next.js app with TernSecure
 ---
+import { Step, Steps } from "fumadocs-ui/components/steps"
 
-### Build your own Sign-Up component
+<Steps>
+<Step>
+### Wrap your own sign-up component with SignUpProvider
 
 ```tsx title="app/sign-up/[[...sign-up]]/page.tsx"
 import { SignUpForm } from "@/components/signup-form";
@@ -17,3 +19,84 @@ export default function Page() {
   );
 }
 ```
+</Step>
+<Step>
+### Add Sign-Up methods in your component
+<Callout>
+  make sure you have enabled the sign-up method in Firebase console or identity
+  platform.
+</Callout>
+
+we will use `useSignUp` hook from TernSecure to handle sign-up methods.
+
+```tsx title="components/signup-form.tsx"
+import { useSignUp } from "@tern-secure/nextjs";
+
+const { signUp } = useSignUp();
+
+const signUpPasswordField = async () => {
+  const res = await signUp?.withEmailAndPassword({ email, password });
+  if (res?.status === "error") {
+    setFormError({
+      status: "error",
+      message: res.message,
+      error: res.error,
+    });
+  }
+  if (res?.status === "success") {
+   // do something after successful sign-in
+  }
+};
+```
+
+continue, in your form component
+
+```tsx title="components/signup-form.tsx"
+const handleEmailSignUp = async (e: React.FormEvent) => {
+  e.preventDefault();
+  return signUpPasswordField();
+};
+
+return (
+  <form onSubmit={handleEmailSignUp}>
+    {/* your form fields */}
+  </form>
+);
+```
+</Step>
+<Step>
+### Make sign-up public route
+<Callout>
+  if you are using Next.js 15 middleware.ts should be renamed to proxy.ts
+</Callout>
+
+``` ts title="proxy.ts"
+import {
+  ternSecureProxy,
+  createRouteMatcher,
+} from "@tern-secure/nextjs/server";
+
+const publicPaths = createRouteMatcher([
+  "/sign-up(*)",
+]);
+
+export const config = {
+  matcher: [
+    "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",
+    "/(api|trpc)(.*)",
+  ],
+};
+
+export default ternSecureProxy();
+```
+</Step>
+<Step>
+### Update environment variables
+
+Set the following environment variables to tell TernSecure where your sign-up page is located.
+
+```bash title=".env"
+NEXT_PUBLIC_SIGN_UP_URL='/sign-up'
+```
+</Step>
+</Steps>
