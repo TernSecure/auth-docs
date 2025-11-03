@@ -30,7 +30,7 @@ export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
       toc={page.data.toc}
       full={page.data.full}
       footer={{enabled: false}}
-      lastUpdate={new Date(time)}
+      lastUpdate={time ? new Date(time) : undefined}
     >
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
