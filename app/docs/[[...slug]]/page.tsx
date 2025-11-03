@@ -26,8 +26,10 @@ export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
 
   return (
     <DocsPage
+      breadcrumb={{ enabled: false }}
       toc={page.data.toc}
       full={page.data.full}
+      footer={{enabled: false}}
       lastUpdate={new Date(time)}
     >
       <DocsTitle>{page.data.title}</DocsTitle>

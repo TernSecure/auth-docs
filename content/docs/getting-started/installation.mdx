@@ -51,7 +51,7 @@ export default ternSecureProxy();
 TernSecure needs a dedicated API route to handle authentication processes like creating, verifying, and refreshing sessions. Create the following file:
 
 ```ts title="app/api/auth/[[...auth]]/route.ts"
-import { createTernSecureNextJsHandler } from "@tern-secure-node/nextjs/admin";
+import { createTernSecureNextJsHandler } from "@tern-secure/nextjs/admin";
 import { authHandlerOptions } from "@/lib/auth";
 
 export const runtime = "nodejs";
@@ -69,7 +69,7 @@ export { GET, POST };
 The `authHandlerOptions` provide fine-grained control over cookies, security, and CORS settings. Create a new file to define these options.
 
 ```ts title="lib/auth.ts"
-import { type TernSecureHandlerOptions } from "@tern-secure-node/nextjs/admin";
+import { type TernSecureHandlerOptions } from "@tern-secure/nextjs/admin";
 
 export const authHandlerOptions: TernSecureHandlerOptions = {
   cors: {
@@ -99,14 +99,18 @@ export const authHandlerOptions: TernSecureHandlerOptions = {
 ### Add `TernSecureProvider` to your app
 
 ```tsx title="app/layout.tsx"
-import { TernSecureProvider } from "@tern-secure-node/nextjs";
+import { TernSecureProvider } from "@tern-secure/nextjs";
 
 export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return <TernSecureProvider>{children}</TernSecureProvider>;
+  return( 
+    <TernSecureProvider>
+      {children}
+    </TernSecureProvider>
+  );
 }
 ```
 
@@ -117,12 +121,12 @@ export default async function RootLayout({
 
 <Cards>
   <Card
-    title="Custom Sign-In"
+    title="Create a sign-in page"
     description="Add a custom sign-in component to your application"
     href="/docs/guides/authentication-flows/custom-sign-in"
   />
   <Card
-    title="Custom Sign-Up"
+    title="Create a sign-up page"
     description="Add a custom sign-up component to your application"
     href="/docs/guides/authentication-flows/custom-sign-up"
   />
