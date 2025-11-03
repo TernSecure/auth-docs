@@ -1,16 +1,19 @@
-import Link from 'next/link';
+import { HeroSection } from "@/components/hero-section";
+import { AuthenticationSection } from "@/components/auth-section";
+import { FrameworkSupport } from "@/components/framework-support";
+import { CodeDemo } from "@/components/code-demo";
+import { Footer } from "@/components/home-footer";
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col justify-center text-center flex-1">
-      <h1 className="text-2xl font-bold mb-4">Hello World</h1>
-      <p>
-        You can open{' '}
-        <Link href="/docs/nextjs/getting-started" className="font-medium underline">
-          /docs
-        </Link>{' '}
-        and see the documentation.
-      </p>
+    <div className="min-h-screen">
+      <main>
+        <HeroSection />
+        <AuthenticationSection />
+        <CodeDemo />
+        <FrameworkSupport />
+      </main>
+      <Footer />
     </div>
   );
 }
