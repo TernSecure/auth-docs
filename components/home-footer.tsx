@@ -12,27 +12,17 @@ export function Footer() {
               <span className="text-xl font-bold">TernSecure</span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-md">
-              Simplifying Firebase Authentication for Next.js and React applications. Built by developers, for
-              developers.
+              Simplifying Firebase Authentication for Next.js and React applications.
             </p>
             <div className="flex items-center gap-4 mt-6">
               <a
-                href="https://github.com"
+                href="https://github.com/TernSecure/auth"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground transition-colors hover:text-foreground"
                 aria-label="GitHub"
               >
                 <Github className="h-5 w-5" />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground transition-colors hover:text-foreground"
-                aria-label="Twitter"
-              >
-                <Twitter className="h-5 w-5" />
               </a>
             </div>
           </div>
@@ -61,7 +51,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li>
                 <a
-                  href="https://www.npmjs.com/package/ternsecure"
+                  href="https://www.npmjs.com/package/@tern-secure/nextjs"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground transition-colors hover:text-foreground"
@@ -70,13 +60,8 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <Link href="/docs" className="text-muted-foreground transition-colors hover:text-foreground">
-                  Getting Started
-                </Link>
-              </li>
-              <li>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/TernSecure/auth"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground transition-colors hover:text-foreground"
@@ -90,7 +75,7 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-border">
           <p className="text-center text-sm text-muted-foreground">
-            © {new Date().getFullYear()} TernSecure. Built with Next.js and Firebase.
+            © {new Date().getFullYear()} TernSecure.
           </p>
         </div>
       </div>

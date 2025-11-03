@@ -202,25 +202,25 @@ export function CodeDemo() {
                 <TabsList className="bg-transparent border-0 p-0 h-auto gap-1">
                   <TabsTrigger
                     value="proxy"
-                    className="data-[state=active]:bg-[#1e1e1e] data-[state=active]:text-foreground text-muted-foreground rounded-t-md px-3 py-2 text-xs sm:text-sm sm:px-4 transition-all border-t-2 border-transparent data-[state=active]:border-primary"
+                    className="data-[state=active]:bg-[#1e1e1e] data-[state=active]:text-white text-gray-400 hover:text-gray-300 rounded-t-md px-3 py-2 text-xs sm:text-sm sm:px-4 transition-all border-t-2 border-transparent data-[state=active]:border-primary"
                   >
                     proxy.ts
                   </TabsTrigger>
                   <TabsTrigger
                     value="provider"
-                    className="data-[state=active]:bg-[#1e1e1e] data-[state=active]:text-foreground text-muted-foreground rounded-t-md px-3 py-2 text-xs sm:text-sm sm:px-4 transition-all border-t-2 border-transparent data-[state=active]:border-primary"
+                    className="data-[state=active]:bg-[#1e1e1e] data-[state=active]:text-white text-gray-400 hover:text-gray-300 rounded-t-md px-3 py-2 text-xs sm:text-sm sm:px-4 transition-all border-t-2 border-transparent data-[state=active]:border-primary"
                   >
                     layout.tsx
                   </TabsTrigger>
                   <TabsTrigger
                     value="client"
-                    className="data-[state=active]:bg-[#1e1e1e] data-[state=active]:text-foreground text-muted-foreground rounded-t-md px-3 py-2 text-xs sm:text-sm sm:px-4 transition-all border-t-2 border-transparent data-[state=active]:border-primary"
+                    className="data-[state=active]:bg-[#1e1e1e] data-[state=active]:text-white text-gray-400 hover:text-gray-300 rounded-t-md px-3 py-2 text-xs sm:text-sm sm:px-4 transition-all border-t-2 border-transparent data-[state=active]:border-primary"
                   >
                     client side
                   </TabsTrigger>
                   <TabsTrigger
                     value="server"
-                    className="data-[state=active]:bg-[#1e1e1e] data-[state=active]:text-foreground text-muted-foreground rounded-t-md px-3 py-2 text-xs sm:text-sm sm:px-4 transition-all border-t-2 border-transparent data-[state=active]:border-primary"
+                    className="data-[state=active]:bg-[#1e1e1e] data-[state=active]:text-white text-gray-400 hover:text-gray-300 rounded-t-md px-3 py-2 text-xs sm:text-sm sm:px-4 transition-all border-t-2 border-transparent data-[state=active]:border-primary"
                   >
                     server side
                   </TabsTrigger>

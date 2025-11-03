@@ -98,6 +98,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <DocsLayout
       tree={source.pageTree}
       {...base}
+      nav={{
+        title: 'TernSecure Auth Docs',
+        url: '/docs',
+      }}
       sidebar={{
         tabs,
         navigation,

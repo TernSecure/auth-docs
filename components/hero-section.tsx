@@ -1,19 +1,10 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Copy, Check } from "lucide-react"
-import { useState } from "react"
+import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 
 export function HeroSection() {
-  const [copied, setCopied] = useState(false)
-  const installCommand = "npm install ternsecure"
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText(installCommand)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
-  }
 
   return (
     <section className="relative overflow-hidden pt-16 pb-12 md:pt-20 md:pb-16 lg:pt-24 lg:pb-20">
@@ -42,7 +33,7 @@ export function HeroSection() {
           </h1>
 
           <p className="mb-10 text-lg text-muted-foreground text-balance leading-relaxed sm:text-xl animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
-            The complete Firebase toolkit for Next.js and React. Start with authentication today.
+            The complete Firebase toolkit for React. Start with authentication today.
           </p>
 
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
@@ -55,18 +46,6 @@ export function HeroSection() {
             <Button size="lg" variant="outline" asChild>
               <Link href="/docs">View Documentation</Link>
             </Button>
-          </div>
-
-          <div className="mt-12 inline-flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-3 font-mono text-sm animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500">
-            <span className="text-muted-foreground">$</span>
-            <span>{installCommand}</span>
-            <button
-              onClick={handleCopy}
-              className="ml-2 rounded p-1 transition-colors hover:bg-muted"
-              aria-label="Copy install command"
-            >
-              {copied ? <Check className="h-4 w-4 text-accent" /> : <Copy className="h-4 w-4 text-muted-foreground" />}
-            </button>
           </div>
         </div>
       </div>

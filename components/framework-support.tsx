@@ -6,13 +6,13 @@ import { Check, Clock } from "lucide-react"
 const frameworks = [
   {
     name: "Next.js",
-    versions: "13, 14, 15.0.3",
+    versions: "13, 14, 15, 16",
     status: "ready",
-    description: "Full support for App Router and Pages Router",
+    description: "Full support for App Router",
   },
   {
     name: "React",
-    versions: "18+",
+    versions: "19+",
     status: "ready",
     description: "Works with any React application",
   },
